@@ -1,4 +1,4 @@
-# FCUP-BD
+# FCUP-BD 2022/2023
 
 ## Summary
 Project made for 2022/2023 edition of Databases course
