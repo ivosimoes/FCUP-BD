@@ -3,7 +3,7 @@
 ## Summary
 Project made for 2022/2023 edition of Databases course
 
-**Theme**: Implementation of a database to store data tables from INE
+**Theme**: Implementation of a database to store data tables from INE about students enrolled in university in Portugal
 
 ## Grade: 16.2/20
 
