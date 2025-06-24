@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Cursos{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<table> 
+  <tr>
+    <th><b>Curso</b></th>
+    <th><b>Total de Inscritos</b></th>
+   </tr>
+   
+  {% for curso in cursos %}
+    <tr>
+      <td><a href="/cursos/{{ curso.nome }}">{{ curso.nome }}</a></td>
+      <td>{{ curso.ins }}</td>
+    </tr>
+  {% endfor %}
+  </table>
+
+<hr style="height:2px;border-width:0;color:gray;background-color:gray">
+<p>
+  <p>
+  All Data:
+<p>
+  <table> 
+  <tr>
+    <th><b>CursoId</b></th>
+    <th><b>Nome</b></th>
+   </tr>
+   
+  {% for list in listall %}
+    <tr>
+      <td><a href="/cursos/{{ list.CursoId }}">{{ list.CursoId }}</a></td>
+      <td><a href="/cursos/{{ list.Nome }}">{{ list.Nome }}</a></td>
+    </tr>
+  {% endfor %}
+  </table>
+{% endblock %}

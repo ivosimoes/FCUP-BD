@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Informação dos Inscritos id:{{ insinfo['InsId'] }}{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <p>
+    O grupo de inscritos {{insinfo['InsId']}} constituido por {{insinfo['NumIns']}} elementos e pertence ao ensino {{insinfo['Tipo']}}.
+  <p>
+  <table> 
+  <tr>
+    <th><b>InsId</b></th>
+    <th><b>Ano</b></th>
+    <th><b>Uni</b></th>
+    <th><b>Tipo</b></th>
+    <th><b>NumIns Grupo</b></th>
+   </tr>
+    <tr>
+      <td>{{ insinfo['InsId'] }}</td>
+      <td><a href="/anos/{{ insinfo.Ano }}">{{ insinfo.Ano }}</a></td>
+      <td><a href="/unis/{{ insinfo.Uni }}">{{ insinfo.Uni }}</a></td>
+      <td>{{ insinfo.Tipo }}</td>
+      <td>{{ insinfo['NumIns'] }}</td>
+    </tr>
+  </table>
+  <a href="/inscritos/detailed/{{insinfo['InsId']}}/">Dados detalhados sobre o grupo</a>
+      
+{% endblock %}

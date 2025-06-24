@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Universidades{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+
+<table> 
+  <tr>
+    <th><b>Universidade</b></th>
+    <th><b>Total de Inscritos</b></th>
+   </tr>
+   
+  {% for uni in unis %}
+    <tr>
+      <td><a href="/unis/{{ uni.nome }}">{{ uni.nome }}</a></td>
+      <td>{{ uni['ins'] }}</td>
+    </tr>
+  {% endfor %}
+  </table>
+
+<hr style="height:2px;border-width:0;color:gray;background-color:gray">
+<p>
+  <p>
+  All Data:
+<p>
+  <table> 
+  <tr>
+    <th><b>Nome</b></th>
+    <th><b>ZonaId</b></th>
+    <th><b>Num_Ins</b></th>
+   </tr>
+   
+  {% for list in listall %}
+    <tr>
+      <td><a href="/unis/{{ list.Nome }}">{{ list.Nome }}</a></td>
+      <td><a href="/zonas/{{ list.ZonaId }}">{{ list.ZonaId }}</a></td>
+      <td>{{ list.Num_Ins }}</td>
+    </tr>
+  {% endfor %}
+  </table>
+{% endblock %}

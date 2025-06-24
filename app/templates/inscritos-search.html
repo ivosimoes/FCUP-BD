@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}"{{ search.uni }}" {% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <h2>Resultados da pesquisa</h2>
+  <p>
+    <table> 
+        <tr>
+          <th><b>InsId</b></th>
+          <th><b>Ano</b></th>
+          <th><b>Uni</b></th>
+          <th><b>Tipo</b></th>
+          <th><b>NumIns</b></th>
+         </tr>
+         {% for search in searchuni %}
+          <tr>
+            <td><a href="/inscritos/{{ search['InsId'] }}">{{ search['InsId'] }}</a></td>
+            <td><a href="/anos/{{ search.Ano }}">{{ search.Ano }}</a></td>
+            <td><a href="/unis/{{ search.Uni }}">{{ search.Uni }}</a></td>
+            <td>{{ search.Tipo }}</td>
+            <td>{{ search['Num_Ins'] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+        </p>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Inscritos{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+
+<p>Procurar informação detalhada dos Inscritos:
+  <form name="iid" action="javascript:window.open('/inscritos/detailed/'+document.forms['iid'].elements['id'].value,'_self')">
+     Inscritos Id:<input value="123" name="id" type="number"/><input type="submit" value="get"/>
+  </form>
+</p>
+<p>Procurar por nome da Universidade:
+  <form name="isearch" action="javascript:window.open('/inscritos/search/'+document.forms['isearch'].elements['expr'].value,'_self')">
+    <input name="expr" id="expr" value="Co" required/>
+    <input type="submit" value="search"/>
+  </form>
+  </p>
+  
+<hr style="height:2px;border-width:0;color:gray;background-color:gray">
+<p>
+  <p>
+  All Data:
+<p>
+  <table> 
+  <tr>
+    <th><b>InsId</b></th>
+    <th><b>Ano</b></th>
+    <th><b>Uni</b></th>
+    <th><b>Tipo</b></th>
+    <th><b>Num_Ins</b></th>
+   </tr>
+   
+  {% for list in listall %}
+    <tr>
+      <td><a href="/inscritos/{{ list.InsId }}">{{ list.InsId }}</a></td>
+      <td><a href="/anos/{{ list.Ano }}">{{ list.Ano }}</a></td>
+      <td><a href="/unis/{{ list.Uni }}">{{ list.Uni }}</a></td>
+      <td>{{ list.Tipo }}</td>
+      <td>{{ list.Num_Ins }}</td>
+    </tr>
+  {% endfor %}
+  </table>
+{% endblock %}

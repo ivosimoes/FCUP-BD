@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Informação agrupada pelo tipo de ensino (público/privado){% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+
+<div style="float: left;margin-right:100px">
+    <p>
+    Público
+    <p>
+    <table>
+    <tr>
+    <th><b>Ano</b></th>
+    <th><b>NumUnis</b></th>
+    <th><b>NumIns</b></th>
+    </tr>
+    {% for ano in publico %}
+    <tr>
+      <td><a href="/anos/{{ ano.Ano }}">{{ ano.Ano }}</a></td>
+      <td>{{ ano.count }}</td>
+      <td>{{ ano.sum }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+<div style="float: left">
+    <p>
+    Privado
+    <p>
+    <table>
+    <tr>
+    <th><b>Ano</b></th>
+    <th><b>NumUnis</b></th>
+    <th><b>NumIns</b></th>
+    </tr>
+    {% for ano in privado %}
+    <tr>
+      <td><a href="/anos/{{ ano.Ano }}">{{ ano.Ano }}</a></td>
+      <td>{{ ano.count }}</td>
+      <td>{{ ano.sum }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+<div style="float: left;">
+    <p>
+        Podemos observar que o número de inscritos em ambos os tipos de ensino tem vindo a aumentar, apesar do número de universidades 
+        que dísponibilizam o ensino Privado ter diminuido. Consequentemente, o número total de inscritos no ensino superior também tem vindo a 
+        aumentar pelo que teremos uma sociedade portuguesa com cada vez mais qualificações académicas.
+</div>
+
+    
+{% endblock %}

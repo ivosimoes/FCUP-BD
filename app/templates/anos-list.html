@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Anos Académicos{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <table> 
+  <tr>
+    <th><b>Ano</b></th>
+    <th><b>Total de Inscritos</b></th>
+   </tr>
+   
+  {% for ano in anos %}
+    <tr>
+      <td><a href="/anos/{{ ano.Ano }}">{{ ano.Ano }}</a></td>
+      <td>{{ ano.total }}</td>
+    </tr>
+  {% endfor %}
+  </table>
+  
+  <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+  <p>
+    <p>
+    All Data:
+  <p>
+    <table> 
+      <tr>
+        <th><b>Ano</b></th>
+        <th><b>CurosId</b></th>
+        <th><b>Num_Ins</b></th>
+       </tr>
+       
+      {% for list in listall %}
+        <tr>
+          <td><a href="/anos/{{ list.Ano }}">{{ list.Ano }}</a></td>
+          <td><a href="/cursos/{{ list.CursoId }}">{{ list.CursoId }}</a></td>
+          <td>{{ list.Num_Ins }}</td>
+        </tr>
+      {% endfor %}
+      </table>
+  
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Base de dados ALUNOS {% endblock %}</h1>
+{% endblock %}
+
+
+{% block content %}
+
+<!---->
+<h2>Algumas características da BD</h2>
+<table>
+<tr>
+  <th>Item</th>
+  <th>Quantidade</th>
+</tr>
+<tr>
+  <td>Anos Académicos</td>
+  <td>{{ stats.anos }}</td>
+</tr>
+<tr>
+  <td>Cursos</td>
+  <td>{{ stats.cursos }}</td>
+</tr>
+<tr>
+  <td>Universidades</td>
+  <td>{{ stats.unis }}</td>
+</tr>
+<tr>
+  <td>Zonas</td>
+  <td>{{ stats.zonas }}</td>
+</tr>
+</table>
+
+
+<!---->
+<h2>Dados</h2>
+<p>
+  <a href="/anos" style="font-size: 20px">Ano Académico</a>
+<p>
+  <a href="/inscritos" style="font-size: 20px">Inscritos</a>
+<p>
+  <a href="/cursos" style="font-size: 20px">Cursos</a>
+<p>
+   <a href="/unis" style="font-size: 20px">Universidades</a>
+<p>
+  <a href="/zonas" style="font-size: 20px">Zonas </a>
+<p>
+  <a href="/tipos" style="font-size: 20px">Tipos de ensino </a>
+<p>
+
+<!---->
+<h2>Sobre</h2>
+<p>Esta aplicação web ilustra o uso da BD ALUNOS.
+A aplicação foi construída com: 
+<a href="https://pymysql.readthedocs.io/">PyMySQL</a>,
+<a href="https://flask.palletsprojects.com">Flask</a>, e
+<a href="https://jinja.palletsprojects.com">Jinja</a>. 
+</p>Aplicação baseada na app disponibilizada pelo professor.
+</p>FCUP-DCC / G18 / 2022-2023
+
+
+{% endblock %}

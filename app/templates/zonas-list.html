@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Zonas{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <table> 
+  <tr>
+    <th><b>Id</b></th>
+    <th><b>Nome</b></th>
+   </tr>
+   
+  {% for zona in zonas %}
+    <tr>
+      <td><a href="/zonas/{{ zona.ZonaId }}">{{ zona.ZonaId }}</a></td>
+      <td><a href="/zonas/{{ zona.Nome }}">{{ zona.Nome }}</a></td>
+    </tr>
+  {% endfor %}
+  </table>
+
+
+
+  
+
+  <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+  <p>
+    <p>
+    All Data:
+  <p>
+    <table> 
+      <tr>
+        <th><b>ZonaId</b></th>
+        <th><b>Nome</b></th>
+        <th><b>Num_Ins</b></th>
+       </tr>
+       
+      {% for zona in zonas %}
+        <tr>
+          <td><a href="/zonas/{{ zona.ZonaId }}">{{ zona.ZonaId }}</a></td>
+          <td><a href="/zonas/{{ zona.Nome }}">{{ zona.Nome }}</a></td>
+          <td>{{ zona.Num_Ins }}</td>
+        </tr>
+      {% endfor %}
+      </table>
+    {% endblock %}

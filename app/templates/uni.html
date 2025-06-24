@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Informação da Universidade {{ uniinfo.uninome }}{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <p>
+    A Universidade {{uniinfo['uninome']}} tem um total de {{uniinfo['ins']}} inscritos 
+    e situa-se na zona {{uniinfo['zonanome']}}.
+  <p>
+  <table> 
+  <tr>
+    <th><b>Universidade</b></th>
+    <th><b>NumIns</b></th>
+    <th><b>Zona</b></th>
+   </tr>
+    <tr>
+      <td>{{ uniinfo['uninome'] }}</td>
+      <td>{{ uniinfo['ins'] }}</td>
+      <td><a href="/zonas/{{ uniinfo['zonanome'] }}">{{ uniinfo['zonanome'] }}</a></td>
+    </tr>
+  </table>
+  <p>
+  <img src="/static/images/uni{{ uniinfo.uninome }}.jpg">
+    
+{% endblock %}

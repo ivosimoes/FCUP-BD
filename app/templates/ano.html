@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Informação do Ano {{ ano }}{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <p>
+    <table> 
+      <tr>
+        <th><b>Curso</b></th>
+        <th><b>Total de Inscritos</b></th>
+       </tr>
+       
+      {% for curso in cursos %}
+        <tr>
+          <td><a href="/cursos/{{ curso.nome }}">{{ curso.nome }}</td>
+          <td>{{ curso.ins }}</td>
+        </tr>
+      {% endfor %}
+      </table>
+{% endblock %}

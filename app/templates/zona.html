@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Zona {{ zonainfo.Nome }} {% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <b>Total de Inscritos: </b>{{ zonainfo.total }}
+  </p>
+  <img src="/static/images/{{ zonainfo.Nome }}.jpg">
+{% endblock %}
+
